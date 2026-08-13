@@ -300,6 +300,30 @@ h1,h2,h3{ font-family:var(--font-display); text-transform:uppercase; letter-spac
   box-shadow:0 6px 14px rgba(0,0,0,.35);
 }
 
+
+.product-card--unavailable{ opacity:.82; }
+.product-card--unavailable:hover{ transform:none; }
+.product-card__ribbon--off{
+  background:linear-gradient(135deg, #5b6579 0%, #384155 100%);
+  color:#eef3fa;
+}
+.product-card--unavailable .product-media img{
+  filter:grayscale(.55) brightness(.6);
+}
+.product-media__overlay{
+  position:absolute; inset:0; z-index:2;
+  display:flex; align-items:center; justify-content:center;
+  background:rgba(6,10,18,.45);
+}
+.product-media__overlay span{
+  font-family:var(--font-mono); font-size:11.5px;
+  letter-spacing:.08em; text-transform:uppercase;
+  color:var(--text); background:rgba(6,10,18,.7);
+  border:1px solid var(--line); border-radius:999px;
+  padding:6px 14px;
+}
+.product-card--unavailable .price-now{ color:var(--text-faint); }
+
 /* --- Placeholder de imagem: proporção fixa, ajusta-se a qualquer imagem --- */
 .product-media{
   position:relative;
