@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: marketplace-masculinidade
+    plan: free            # troca para "starter" se quiseres always-on + disco persistente
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    envVars:
+      - key: PORT
+        value: 10000
+    # Descomenta para anexar disco persistente (exige plano pago, ex.: starter)
+    # disk:
+    #   name: dados
+    #   mountPath: /var/www/html/storage
+    #   sizeGB: 1
