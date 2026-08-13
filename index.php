@@ -11,6 +11,7 @@ $mensagem_whatsapp_generico = 'Olá! Vim do site e gostaria de mais informaçõe
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Reacenda a Sua Potência</title>
 <meta name="description" content="Produtos premium de cuidado masculino. Pagamento apenas na entrega, em todo o país.">
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>

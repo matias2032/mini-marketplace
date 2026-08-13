@@ -18,6 +18,7 @@ if (!$pedido) {
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pedido registado — a encaminhar para o WhatsApp</title>
 <link rel="stylesheet" href="assets/css/style.css">
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
 <meta http-equiv="refresh" content="2;url=<?= htmlspecialchars($pedido['whatsapp']) ?>">
 </head>
 <body>
