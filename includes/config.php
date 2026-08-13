@@ -67,21 +67,21 @@ $PRODUTOS = [
         ],
     ],
 
-    //     'sabonete-masculino' => [
-    //     'id'          => 'sabonete-masculino',
-    //     'nome'        => 'Sabonete Masculino Premium',
-    //     'imagem'      => 'assets/img/produtos/sabonete.jpg',
-    //     'preco'       => 900,
-    //     'preco_de'    => 1300,
-    //     'moeda'       => 'MZN',
-    //     'resumo'      => 'Higiene íntima e reforço da confiança em cada uso.',
-    //     'beneficios'  => [
-    //         'Higiene íntima masculina',
-    //         'Sensação de frescura duradoura',
-    //         'Fórmula para cuidados diários',
-    //         'Fácil de utilizar',
-    //     ],
-    // ],
+        'sabonete-masculino' => [
+        'id'          => 'sabonete-masculino',
+        'nome'        => 'Sabonete Masculino Premium',
+        'imagem'      => 'assets/img/produtos/sabonete.jpg',
+        'preco'       => 900,
+        'preco_de'    => 1300,
+        'moeda'       => 'MZN',
+        'resumo'      => 'Higiene íntima e reforço da confiança em cada uso.',
+        'beneficios'  => [
+            'Higiene íntima masculina',
+            'Sensação de frescura duradoura',
+            'Fórmula para cuidados diários',
+            'Fácil de utilizar',
+        ],
+    ],
 ];
 
 // --------------------------------------------------------------
