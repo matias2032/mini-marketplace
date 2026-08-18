@@ -1,4 +1,5 @@
 <?php
+// confirmado.php
 session_start();
 require_once __DIR__ . '/includes/icons.php';
 
@@ -16,10 +17,10 @@ if (!$pedido) {
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pedido registado — a encaminhar para o WhatsApp</title>
+<title>Pedido registado — Finalize no WhatsApp</title>
 <link rel="stylesheet" href="assets/css/style.css">
 <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
-<meta http-equiv="refresh" content="2;url=<?= htmlspecialchars($pedido['whatsapp']) ?>">
+<!-- REMOVIDA A TAG META REFRESH -->
 </head>
 <body>
 <main>
@@ -30,21 +31,21 @@ if (!$pedido) {
       <p>
         Obrigado, <?= htmlspecialchars($pedido['nome']) ?>. O seu pedido de
         <strong><?= htmlspecialchars($pedido['produto']) ?></strong>
-        (<?= htmlspecialchars($pedido['preco']) ?>) foi registado.
-        Vamos abrir o WhatsApp para confirmar a entrega.
+        (<?= htmlspecialchars($pedido['preco']) ?>) foi reservado.
       </p>
-      <div class="confirm-spinner" aria-hidden="true"></div>
-      <a href="<?= htmlspecialchars($pedido['whatsapp']) ?>" class="btn btn-primary" target="_blank" rel="noopener">
-        Continuar no WhatsApp
+      
+      <!-- Adicionado um aviso forte para o utilizador clicar -->
+      <div style="background-color: #fff3cd; color: #856404; padding: 15px; border-radius: 8px; margin: 20px 0; border: 1px solid #ffeeba;">
+          <strong>⚠️ ATENÇÃO:</strong> O seu pedido só será enviado após confirmação no WhatsApp. Clique no botão abaixo para concluir.
+      </div>
+
+      <!-- O target="_blank" ajuda a contornar alguns bloqueios -->
+      <a href="<?= htmlspecialchars($pedido['whatsapp']) ?>" class="btn btn-primary btn-block" target="_blank" rel="noopener">
+        <?= icon('chat') ?> CONFIRMAR PEDIDO NO WHATSAPP
       </a>
     </div>
   </div>
 </main>
-<script>
-  // Reforço via JS caso o redireccionamento por meta-refresh seja bloqueado
-  setTimeout(function(){
-    window.location.href = <?= json_encode($pedido['whatsapp']) ?>;
-  }, 2200);
-</script>
+<!-- REMOVIDO O SCRIPT DE SETTIMEOUT -->
 </body>
 </html>

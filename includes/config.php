@@ -1,4 +1,5 @@
 <?php
+// config.php
 /**
  * ============================================================
  *  CONFIGURAÇÃO GERAL DO MARKETPLACE
