@@ -34,10 +34,7 @@ if (!$pedido) {
         (<?= htmlspecialchars($pedido['preco']) ?>) foi reservado.
       </p>
       
-      <!-- Adicionado um aviso forte para o utilizador clicar -->
-      <div style="background-color: #fff3cd; color: #856404; padding: 15px; border-radius: 8px; margin: 20px 0; border: 1px solid #ffeeba;">
-          <strong>⚠️ ATENÇÃO:</strong> O seu pedido só será enviado após confirmação no WhatsApp. Clique no botão abaixo para concluir.
-      </div>
+
 
       <!-- O target="_blank" ajuda a contornar alguns bloqueios -->
       <a href="<?= htmlspecialchars($pedido['whatsapp']) ?>" class="btn btn-primary btn-block" target="_blank" rel="noopener">
