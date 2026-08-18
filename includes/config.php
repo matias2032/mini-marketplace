@@ -118,9 +118,24 @@ if (!function_exists('formatar_preco')) {
 if (!function_exists('link_whatsapp')) {
     function link_whatsapp($mensagem = '') {
         $numero = WHATSAPP_NUMBER;
-        $base   = "https://wa.me/{$numero}";
-        if ($mensagem !== '') {
-            $base .= '?text=' . rawurlencode($mensagem);
+        
+        // Verifica se o clique vem de um telemóvel (ex: anúncio no Instagram/Facebook)
+        $user_agent = $_SERVER['HTTP_USER_AGENT'] ?? '';
+        $is_mobile = preg_match('/Mobile|Android|BlackBerry|iPhone|Windows Phone/i', $user_agent);
+        
+        if ($is_mobile) {
+            // DEEP LINK NATIVO: Força a abertura direta da App e fura o bloqueio do Meta
+            $base = "whatsapp://send?phone={$numero}";
+            if ($mensagem !== '') {
+                // Nota: aqui usamos '&text=' porque já existe um '?' antes do phone
+                $base .= '&text=' . rawurlencode($mensagem);
+            }
+        } else {
+            // Link normal para quem estiver a aceder pelo computador
+            $base = "https://wa.me/{$numero}";
+            if ($mensagem !== '') {
+                $base .= '?text=' . rawurlencode($mensagem);
+            }
         }
         return $base;
     }
